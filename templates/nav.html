@@ -27,15 +27,19 @@
          <ul class="list-style-none mr-auto ml-8 flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
             <!-- Dashboard link -->
             <li class="my-4 lg:my-0 lg:pr-2" data-te-nav-item-ref>
-               <a class="text-black"
-                  href="#" data-te-nav-link-ref>Invitation</a>
+               <a class="text-pink-700 hover:text-pink-500"
+                  href="{% url 'main:main' %}" data-te-nav-link-ref>Invitation</a>
             </li>
          </ul>
       </div>
 
       <!-- Right elements -->
       <div class="relative flex items-center">
-         <span class="font-bold">{{ request.user }}</span>
+         Logged in as: 
+         <span class="font-semibold ml-3">{{ request.user }}</span>
+         <span>
+            <a href="{% url 'main:logout' %}" class="ml-6 text-sm text-red-500">Logout</a>
+         </span>
       </div>
       <!-- Right elements -->
    </div>

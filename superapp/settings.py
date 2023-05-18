@@ -143,3 +143,6 @@ if not DEBUG:
             # }
         }
     }
+
+LOGIN_REDIRECT_URL = 'guests:guest-list'
+LOGOUT_REDIRECT_URL = 'main:main'
