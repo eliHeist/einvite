@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheila Introduces Vernyuy</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Poppins:wght@300;400;500;600;700;800;900&family=Style+Script&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    },
+                    fontFamily: {
+                        body: ['Poppins', 'sans-serif'],
+                        cursive: ['Euphoria Script', 'cursive'],
+                        style: ['Style Script', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class=" font-body scroll-smooth">
+    <div class="grid md:grid-cols-2 h-[100vh]">
+        <div class="h-screen grid bg-gradient-to-br from-[#94b3e9] via-[#e9b7e3] to-white relative">
+            <section title="Invite video" class="my-auto">
+                <video src="{% static 'video/video.m4v' %}" controls class="h-[75vh] mx-auto rounded-xl shadow-2xl"></video>
+            </section>
+            <div class="w-full absolute left-0 bottom-8 flex justify-end md:hidden">
+                <div class="rounded-full p-4 mr-8 aspect-square grid place-content-center w-min">
+                    <svg viewBox="0 0 448 512" class="h-8 fill-black">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z" />
+                        </svg>
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <div class="h-full w-full p-4 bg-[rgba(255,255,255,0.5)]">
+                <form class="invitation form text-center max-w-lg mx-auto" action="{% url 'guests:guest-confirm' %}">
+                    <p class=" font-body text-xl">
+                        Please join us as we celebrate New Beginnings, New dreams, and most importantly New love at the
+                        Traditional Marriage Ceremony of
+                    </p>
+                    <h1 class="text-xl grid my-16 font-style">
+                        <span class="text-6xl">Sheila Mugenyi</span> and <span class="text-6xl">Vernyuy E Sunjo</span>
+                    </h1>
+                    <p>
+                        Scheduled on <span class="font-bold">Saturday 26th August, 2023</span>.
+                        at <span class="font-bold">11:00 AM</span> <br>at <span class="font-bold">Ndere Center</span>,
+                        Kampala Uganda.
+                    </p>
+
+                    <p class="mt-16">
+                        Please confirm your attendance by registering in the form below
+                    </p>
+                    <p>
+                        {% csrf_token %}
+                        <input placeholder="Enter your name here" type="text" name="name"
+                            class="w-full p-2 rounded-xl border-yellow-500 border-2 my-2">
+                        <input placeholder="Enter your number here" type="tel" name="phone"
+                            class="w-full p-2 rounded-xl border-yellow-500 border-2 my-2">
+                        <input placeholder="Enter your email here" type="email" name="email"
+                            class="w-full p-2 rounded-xl border-yellow-500 border-2 my-2">
+                        <button type="submit" class="w-full rounded-xl p-2 bg-yellow-400">Confirm Attendance</button>
+                    </p>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
