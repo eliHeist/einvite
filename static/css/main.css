@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 main.main {
-  background-image: url("../images/bg.jpeg");
+  background-image: url("../images/bg.webp");
   background-size: cover;
   background-position: right;
   background-attachment: fixed;
+}
+
+.glassmorphism-bg {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+[x-cloak] {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

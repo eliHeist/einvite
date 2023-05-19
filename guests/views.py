@@ -11,6 +11,11 @@ class GuestListView(LoginRequiredMixin, ListView):
    template_name = "guests/guest-list.html"
    context_object_name = 'guests'
 
+   def get_queryset(self):
+        queryset = super().get_queryset()
+        # Add custom filtering here
+        return queryset.filter(is_active=True)
+
 
 def addGuestView(request):
    if request.method == 'POST':
