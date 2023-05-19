@@ -971,6 +971,10 @@ video {
   font-weight: 500;
 }
 
+.font-black {
+  font-weight: 900;
+}
+
 .leading-tight {
   line-height: 1.25;
 }
@@ -1008,6 +1012,11 @@ video {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-yellow-900 {
+  --tw-text-opacity: 1;
+  color: rgb(113 63 18 / var(--tw-text-opacity));
 }
 
 .shadow-md {
